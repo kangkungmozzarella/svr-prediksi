@@ -1,0 +1,76 @@
+{
+  "yearly_error_by_category": {
+    "Beras Kualitas Bawah I": [
+      {
+        "Year": 2024,
+        "MAE": 866.63,
+        "Std_Error": 275.03,
+        "Min_Error": 40.36,
+        "Max_Error": 1723.49,
+        "MAPE": 7.01
+      }
+    ],
+    "Beras Kualitas Bawah II": [
+      {
+        "Year": 2024,
+        "MAE": 690.9,
+        "Std_Error": 297.11,
+        "Min_Error": 3.49,
+        "Max_Error": 1709.73,
+        "MAPE": 5.36
+      }
+    ],
+    "Beras Kualitas Medium I": [
+      {
+        "Year": 2024,
+        "MAE": 725.49,
+        "Std_Error": 306.18,
+        "Min_Error": 9.08,
+        "Max_Error": 1846.1,
+        "MAPE": 5.19
+      }
+    ],
+    "Beras Kualitas Medium II": [
+      {
+        "Year": 2024,
+        "MAE": 715.92,
+        "Std_Error": 265.8,
+        "Min_Error": 6.32,
+        "Max_Error": 1704.16,
+        "MAPE": 5.07
+      }
+    ],
+    "Beras Kualitas Super I": [
+      {
+        "Year": 2024,
+        "MAE": 860.92,
+        "Std_Error": 339.3,
+        "Min_Error": 50.55,
+        "Max_Error": 1883.76,
+        "MAPE": 5.89
+      }
+    ],
+    "Beras Kualitas Super II": [
+      {
+        "Year": 2024,
+        "MAE": 815.39,
+        "Std_Error": 295.33,
+        "Min_Error": 17.31,
+        "Max_Error": 1814.26,
+        "MAPE": 5.45
+      }
+    ]
+  },
+  "overall_insights": {
+    "best_category": "Medium II",
+    "worst_category": "Bawah I",
+    "average_mape_by_category": {
+      "Bawah I": 7.01,
+      "Bawah II": 5.36,
+      "Medium I": 5.19,
+      "Medium II": 5.07,
+      "Super I": 5.89,
+      "Super II": 5.45
+    }
+  }
+}

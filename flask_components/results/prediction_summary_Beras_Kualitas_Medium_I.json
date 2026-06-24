@@ -1,0 +1,163 @@
+{
+  "kategori": "Beras Kualitas Medium I",
+  "total_predictions": 246,
+  "statistics": {
+    "mae": 725.4857451384869,
+    "rmse": 787.2078409102363,
+    "mape": 5.187663597043158,
+    "min_error": -1846.0973748062042,
+    "max_error": -9.076482480402774,
+    "mean_error": -725.4857451384869,
+    "std_error": 306.18247276704545
+  },
+  "error_distribution": {
+    "sangat_baik": 132,
+    "baik": 104,
+    "cukup": 10,
+    "buruk": 0
+  },
+  "best_predictions": [
+    {
+      "date": "2024-01-23",
+      "actual": 13700.0,
+      "predicted": 13690.923517519597,
+      "absolute_error": 9.076482480402774,
+      "error_percentage": 0.06625169693724653
+    },
+    {
+      "date": "2024-11-20",
+      "actual": 13250.0,
+      "predicted": 13230.255809857817,
+      "absolute_error": 19.74419014218256,
+      "error_percentage": 0.14901275579005704
+    },
+    {
+      "date": "2024-11-29",
+      "actual": 13750.0,
+      "predicted": 13680.972957736463,
+      "absolute_error": 69.02704226353671,
+      "error_percentage": 0.5020148528257216
+    },
+    {
+      "date": "2024-01-24",
+      "actual": 13800.0,
+      "predicted": 13664.715909567498,
+      "absolute_error": 135.28409043250213,
+      "error_percentage": 0.9803194958876965
+    },
+    {
+      "date": "2024-11-28",
+      "actual": 13750.0,
+      "predicted": 13556.10329418253,
+      "absolute_error": 193.8967058174694,
+      "error_percentage": 1.4101578604906866
+    },
+    {
+      "date": "2024-01-25",
+      "actual": 13800.0,
+      "predicted": 13559.786291329987,
+      "absolute_error": 240.21370867001315,
+      "error_percentage": 1.7406790483334287
+    },
+    {
+      "date": "2024-12-11",
+      "actual": 13850.0,
+      "predicted": 13609.642579500658,
+      "absolute_error": 240.35742049934197,
+      "error_percentage": 1.7354326389844184
+    },
+    {
+      "date": "2024-12-26",
+      "actual": 13700.0,
+      "predicted": 13452.25736642455,
+      "absolute_error": 247.74263357544987,
+      "error_percentage": 1.8083403910616778
+    },
+    {
+      "date": "2024-12-03",
+      "actual": 13750.0,
+      "predicted": 13492.19827850843,
+      "absolute_error": 257.8017214915708,
+      "error_percentage": 1.8749216108477875
+    },
+    {
+      "date": "2024-02-01",
+      "actual": 13900.0,
+      "predicted": 13621.188537651744,
+      "absolute_error": 278.8114623482561,
+      "error_percentage": 2.0058378586205476
+    }
+  ],
+  "worst_predictions": [
+    {
+      "date": "2024-07-26",
+      "actual": 14050.0,
+      "predicted": 12203.902625193796,
+      "absolute_error": 1846.0973748062042,
+      "error_percentage": 13.139483094706081
+    },
+    {
+      "date": "2024-07-25",
+      "actual": 14050.0,
+      "predicted": 12241.452380057168,
+      "absolute_error": 1808.5476199428322,
+      "error_percentage": 12.872225052973896
+    },
+    {
+      "date": "2024-07-24",
+      "actual": 14050.0,
+      "predicted": 12359.28899500241,
+      "absolute_error": 1690.7110049975909,
+      "error_percentage": 12.033530284680362
+    },
+    {
+      "date": "2024-07-23",
+      "actual": 14050.0,
+      "predicted": 12392.85410354725,
+      "absolute_error": 1657.14589645275,
+      "error_percentage": 11.794632714966193
+    },
+    {
+      "date": "2024-07-22",
+      "actual": 14050.0,
+      "predicted": 12456.992903350705,
+      "absolute_error": 1593.007096649295,
+      "error_percentage": 11.338128801774342
+    },
+    {
+      "date": "2024-07-30",
+      "actual": 14000.0,
+      "predicted": 12454.794314426368,
+      "absolute_error": 1545.2056855736319,
+      "error_percentage": 11.037183468383084
+    },
+    {
+      "date": "2024-07-29",
+      "actual": 14000.0,
+      "predicted": 12476.289340772022,
+      "absolute_error": 1523.7106592279779,
+      "error_percentage": 10.883647565914128
+    },
+    {
+      "date": "2024-06-04",
+      "actual": 14050.0,
+      "predicted": 12582.790941235316,
+      "absolute_error": 1467.2090587646835,
+      "error_percentage": 10.442769101527997
+    },
+    {
+      "date": "2024-07-31",
+      "actual": 14000.0,
+      "predicted": 12573.704165422705,
+      "absolute_error": 1426.295834577295,
+      "error_percentage": 10.187827389837821
+    },
+    {
+      "date": "2024-08-01",
+      "actual": 14000.0,
+      "predicted": 12584.734141852568,
+      "absolute_error": 1415.2658581474316,
+      "error_percentage": 10.109041843910225
+    }
+  ]
+}

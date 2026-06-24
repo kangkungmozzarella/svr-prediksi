@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Generated copy of flask_components/visualizations, auto-recreated by app.py at runtime
+static/visualizations/*.html

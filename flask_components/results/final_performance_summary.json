@@ -1,0 +1,70 @@
+{
+  "research_info": {
+    "title": "PENERAPAN METODE SUPPORT VECTOR REGRESSION DALAM MEMPREDIKSI HARGA BAHAN PANGAN DI KABUPATEN LANGKAT",
+    "method": "Support Vector Regression (SVR) dengan kernel RBF",
+    "categories": 6,
+    "data_period": "2020-01-02 s/d 2024-12-31",
+    "total_records": 1228,
+    "train_size": 982,
+    "test_size": 246
+  },
+  "model_parameters": {
+    "kernel": "RBF (Radial Basis Function)",
+    "C": 100,
+    "epsilon": 0.1,
+    "gamma": "scale"
+  },
+  "evaluation_metrics": [
+    "MAE",
+    "RMSE",
+    "MAPE"
+  ],
+  "results_by_category": {
+    "Beras Kualitas Bawah I": {
+      "mae": 866.6349217011502,
+      "rmse": 909.0611529882988,
+      "mape": 7.006804707953232
+    },
+    "Beras Kualitas Bawah II": {
+      "mae": 690.896224640091,
+      "rmse": 751.8322888471098,
+      "mape": 5.355434754902955
+    },
+    "Beras Kualitas Medium I": {
+      "mae": 725.4857451384869,
+      "rmse": 787.2078409102363,
+      "mape": 5.187663597043157
+    },
+    "Beras Kualitas Medium II": {
+      "mae": 715.9239821907586,
+      "rmse": 763.4858700148942,
+      "mape": 5.070144755387546
+    },
+    "Beras Kualitas Super I": {
+      "mae": 860.9190687344988,
+      "rmse": 925.1139153607412,
+      "mape": 5.890265250240068
+    },
+    "Beras Kualitas Super II": {
+      "mae": 815.3857706223682,
+      "rmse": 867.0178558927868,
+      "mape": 5.450891708657863
+    }
+  },
+  "average_performance": {
+    "mae": 779.2076188378923,
+    "rmse": 833.9531540023445,
+    "mape": 5.66020079569747
+  },
+  "interpretation": {
+    "mape_category": "Sangat Baik (≤10%)",
+    "best_category": {
+      "name": "Beras Kualitas Medium II",
+      "mape": 5.070144755387546
+    },
+    "worst_category": {
+      "name": "Beras Kualitas Bawah I",
+      "mape": 7.006804707953232
+    }
+  }
+}
