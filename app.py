@@ -281,7 +281,10 @@ def dashboard():
         'category_performance': {},
         'model_status': 'Error',
         'data_status': 'Error Loading Data',
-        'last_update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        'last_update': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'weather_statistics': {},
+        'weather_insight': None,
+        'visualizations': {}
     }
     
     try:
@@ -386,6 +389,45 @@ def dashboard():
         else:
             interpretation = "Perlu Perbaikan"
         
+        # ===== FAKTOR CUACA (info terbaru, sesuai revisi penelitian) =====
+        weather_statistics = dataset_info.get('weather_statistics', {})
+        weather_price_correlation = dataset_info.get('weather_price_correlation', {})
+
+        weather_insight = None
+        if weather_price_correlation:
+            # Cari korelasi cuaca-harga terkuat (absolut) untuk insight singkat
+            strongest = None
+            for kategori, corr in weather_price_correlation.items():
+                for factor, value in corr.items():
+                    if strongest is None or abs(value) > abs(strongest[2]):
+                        strongest = (kategori.replace('Beras Kualitas ', ''), factor.replace('_', ' '), value)
+            if strongest:
+                weather_insight = {
+                    'category': strongest[0],
+                    'factor': strongest[1],
+                    'correlation': strongest[2]
+                }
+
+        # ===== COPY VISUALISASI UNTUK DASHBOARD (chart, bukan cuma tabel) =====
+        visualizations = {}
+        viz_source_path = os.path.join(base_path, 'visualizations')
+        if os.path.exists(viz_source_path):
+            static_viz_path = os.path.join('static', 'visualizations')
+            os.makedirs(static_viz_path, exist_ok=True)
+
+            dashboard_viz_files = {
+                'weather_trend': 'trend_cuaca_harian.html',
+                'mape_comparison': 'mape_comparison_all_categories.html'
+            }
+            for key, filename in dashboard_viz_files.items():
+                source = os.path.join(viz_source_path, filename)
+                if os.path.exists(source):
+                    dest = os.path.join(static_viz_path, filename)
+                    if not os.path.exists(dest) or os.path.getmtime(source) > os.path.getmtime(dest):
+                        import shutil
+                        shutil.copy2(source, dest)
+                    visualizations[key] = filename
+
         # Update dashboard_data dengan data real
         dashboard_data.update({
             'research_title': 'Penerapan Metode Support Vector Regression dalam Memprediksi Harga Bahan Pangan di Kabupaten Langkat',
@@ -409,7 +451,10 @@ def dashboard():
             'category_performance': category_performance,
             'model_status': 'Active',
             'data_status': 'Real Data from Jupyter Notebook',
-            'last_update': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            'last_update': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'weather_statistics': weather_statistics,
+            'weather_insight': weather_insight,
+            'visualizations': visualizations
         })
         
         print(f"✅ Dashboard loaded with 100% REAL DATA")
