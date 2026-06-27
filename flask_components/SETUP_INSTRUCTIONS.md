@@ -51,7 +51,7 @@ def predict():
     if request.method == 'POST':
         # Get form data
         kategori = request.form['kategori']
-        
+
         input_data = {
             'Year': int(request.form['year']),
             'Month': int(request.form['month']),
@@ -65,12 +65,12 @@ def predict():
             f'{kategori}_rolling_mean_7': float(request.form['rolling7']),
             f'{kategori}_rolling_mean_30': float(request.form['rolling30'])
         }
-        
+
         # Predict
         result = prediction_functions['predict_price'](input_data, kategori, pipeline)
-        
+
         return jsonify(result)
-    
+
     # GET request - show form
     categories = pipeline['kategori_beras']
     return render_template('predict.html', categories=categories)
@@ -80,14 +80,14 @@ def dashboard():
     # Load analytics data
     with open('flask_components/results/final_performance_summary.json', 'r') as f:
         performance = json.load(f)
-    
+
     return render_template('dashboard.html', performance=performance)
 
 @app.route('/api/historical_data')
 def historical_data():
     # Return historical data untuk charts
     df = pd.read_csv('flask_components/data/sorted_dataset.csv')
-    
+
     # Convert ke format JSON
     data = {
         'dates': df['Tanggal'].tolist(),
@@ -96,7 +96,7 @@ def historical_data():
             for kategori in pipeline['kategori_beras']
         }
     }
-    
+
     return jsonify(data)
 
 if __name__ == '__main__':

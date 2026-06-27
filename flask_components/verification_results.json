@@ -12,9 +12,9 @@
     "training_samples": 982,
     "testing_samples": 246,
     "categories_trained": 6,
-    "average_mape": 5.66020079569747,
-    "average_mae": 779.2076188378923,
+    "average_mape": 5.660046213800967,
+    "average_mae": 779.1873863371183,
     "files_created": 89
   },
-  "completion_timestamp": "2026-06-24T11:40:30.948020"
+  "completion_timestamp": "2026-06-27T12:16:11.601351"
 }

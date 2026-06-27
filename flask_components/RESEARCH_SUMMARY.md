@@ -4,7 +4,7 @@
 
 **Peneliti:** Haris  
 **Periode Data:** 2020-01-02 s/d 2024-12-31  
-**Completed:** 2026-06-24
+**Completed:** 2026-06-27
 
 ### ABSTRACT
 

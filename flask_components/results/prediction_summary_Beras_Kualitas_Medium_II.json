@@ -2,13 +2,13 @@
   "kategori": "Beras Kualitas Medium II",
   "total_predictions": 246,
   "statistics": {
-    "mae": 715.9239821907586,
-    "rmse": 763.4858700148942,
-    "mape": 5.070144755387545,
-    "min_error": -1704.1585760393555,
-    "max_error": 6.323700823846593,
-    "mean_error": -715.8725699889387,
-    "std_error": 265.94103814420777
+    "mae": 715.9239821907597,
+    "rmse": 763.4858700148953,
+    "mape": 5.070144755387553,
+    "min_error": -1704.1585760393573,
+    "max_error": 6.323700823842955,
+    "mean_error": -715.8725699889397,
+    "std_error": 265.94103814420805
   },
   "error_distribution": {
     "sangat_baik": 132,
@@ -20,37 +20,37 @@
     {
       "date": "2024-01-23",
       "actual": 13850.0,
-      "predicted": 13856.323700823847,
-      "absolute_error": 6.323700823846593,
-      "error_percentage": 0.04565848970286349
+      "predicted": 13856.323700823843,
+      "absolute_error": 6.323700823842955,
+      "error_percentage": 0.04565848970283722
     },
     {
       "date": "2024-01-24",
       "actual": 13900.0,
-      "predicted": 13691.54479219394,
-      "absolute_error": 208.45520780606057,
-      "error_percentage": 1.4996777540004358
+      "predicted": 13691.544792193938,
+      "absolute_error": 208.4552078060624,
+      "error_percentage": 1.499677754000449
     },
     {
       "date": "2024-02-01",
       "actual": 14000.0,
-      "predicted": 13759.8296099993,
-      "absolute_error": 240.17039000069963,
-      "error_percentage": 1.715502785719283
+      "predicted": 13759.829609999304,
+      "absolute_error": 240.170390000696,
+      "error_percentage": 1.715502785719257
     },
     {
       "date": "2024-02-02",
       "actual": 14000.0,
-      "predicted": 13720.510814101837,
-      "absolute_error": 279.48918589816276,
-      "error_percentage": 1.9963513278440197
+      "predicted": 13720.510814101835,
+      "absolute_error": 279.4891858981646,
+      "error_percentage": 1.9963513278440328
     },
     {
       "date": "2024-02-15",
       "actual": 13950.0,
-      "predicted": 13661.966139343525,
-      "absolute_error": 288.03386065647464,
-      "error_percentage": 2.0647588577525062
+      "predicted": 13661.966139343524,
+      "absolute_error": 288.03386065647646,
+      "error_percentage": 2.0647588577525195
     },
     {
       "date": "2024-12-18",
@@ -62,9 +62,9 @@
     {
       "date": "2024-11-19",
       "actual": 13950.0,
-      "predicted": 13613.883826442187,
-      "absolute_error": 336.11617355781345,
-      "error_percentage": 2.4094349358983043
+      "predicted": 13613.883826442188,
+      "absolute_error": 336.11617355781163,
+      "error_percentage": 2.4094349358982914
     },
     {
       "date": "2024-02-21",
@@ -92,16 +92,16 @@
     {
       "date": "2024-07-26",
       "actual": 14150.0,
-      "predicted": 12445.841423960645,
-      "absolute_error": 1704.1585760393555,
-      "error_percentage": 12.043523505578484
+      "predicted": 12445.841423960643,
+      "absolute_error": 1704.1585760393573,
+      "error_percentage": 12.043523505578497
     },
     {
       "date": "2024-07-25",
       "actual": 14150.0,
-      "predicted": 12498.23791626701,
-      "absolute_error": 1651.7620837329905,
-      "error_percentage": 11.673230273731381
+      "predicted": 12498.237916267008,
+      "absolute_error": 1651.7620837329923,
+      "error_percentage": 11.673230273731395
     },
     {
       "date": "2024-07-29",
@@ -120,9 +120,9 @@
     {
       "date": "2024-07-24",
       "actual": 14150.0,
-      "predicted": 12614.472399473807,
-      "absolute_error": 1535.527600526193,
-      "error_percentage": 10.85178516272928
+      "predicted": 12614.472399473805,
+      "absolute_error": 1535.5276005261949,
+      "error_percentage": 10.851785162729293
     },
     {
       "date": "2024-07-23",
@@ -155,9 +155,9 @@
     {
       "date": "2024-08-02",
       "actual": 14150.0,
-      "predicted": 12835.396182663013,
-      "absolute_error": 1314.603817336987,
-      "error_percentage": 9.290486341604149
+      "predicted": 12835.396182663011,
+      "absolute_error": 1314.6038173369889,
+      "error_percentage": 9.290486341604161
     }
   ]
 }

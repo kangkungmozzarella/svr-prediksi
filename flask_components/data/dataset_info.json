@@ -119,23 +119,23 @@
   "weather_price_correlation": {
     "Beras Kualitas Bawah I": {
       "Temperatur": 0.14478715842009893,
-      "Curah_Hujan": 0.05895109686094554
+      "Curah_Hujan": 0.058951096860945545
     },
     "Beras Kualitas Bawah II": {
-      "Temperatur": 0.1240155003130775,
-      "Curah_Hujan": 0.056026908516297554
+      "Temperatur": 0.12401550031307737,
+      "Curah_Hujan": 0.05602690851629762
     },
     "Beras Kualitas Medium I": {
-      "Temperatur": 0.12343407898871496,
-      "Curah_Hujan": 0.059701617118243115
+      "Temperatur": 0.12343407898871502,
+      "Curah_Hujan": 0.059701617118243094
     },
     "Beras Kualitas Medium II": {
-      "Temperatur": 0.13696809363958523,
-      "Curah_Hujan": 0.051668481896427906
+      "Temperatur": 0.1369680936395852,
+      "Curah_Hujan": 0.05166848189642788
     },
     "Beras Kualitas Super I": {
-      "Temperatur": 0.1688193164072947,
-      "Curah_Hujan": 0.03845362027760487
+      "Temperatur": 0.16881931640729503,
+      "Curah_Hujan": 0.03845362027760479
     },
     "Beras Kualitas Super II": {
       "Temperatur": 0.16432943027699876,

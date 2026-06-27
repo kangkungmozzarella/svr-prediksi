@@ -2,13 +2,13 @@
   "kategori": "Beras Kualitas Super II",
   "total_predictions": 246,
   "statistics": {
-    "mae": 815.3857706223682,
-    "rmse": 867.0178558927868,
-    "mape": 5.450891708657863,
-    "min_error": -1814.2579827132868,
-    "max_error": 551.9698633119588,
-    "mean_error": -810.8982107580435,
-    "std_error": 307.48723112481196
+    "mae": 815.3108474779362,
+    "rmse": 866.9232090954896,
+    "mape": 5.450392128007456,
+    "min_error": -1814.1220607080777,
+    "max_error": 552.0408368727713,
+    "mean_error": -810.8227105927919,
+    "std_error": 307.41918522596075
   },
   "error_distribution": {
     "sangat_baik": 107,
@@ -20,144 +20,144 @@
     {
       "date": "2024-01-23",
       "actual": 14550.0,
-      "predicted": 14532.691180099559,
-      "absolute_error": 17.30881990044145,
-      "error_percentage": 0.1189609615150615
+      "predicted": 14532.867634734484,
+      "absolute_error": 17.132365265515546,
+      "error_percentage": 0.11774821488326835
     },
     {
       "date": "2024-12-18",
       "actual": 14750.0,
-      "predicted": 14478.507840469827,
-      "absolute_error": 271.492159530173,
-      "error_percentage": 1.8406248103740543
+      "predicted": 14478.55671002169,
+      "absolute_error": 271.4432899783096,
+      "error_percentage": 1.8402934913783704
     },
     {
       "date": "2024-12-17",
       "actual": 14750.0,
-      "predicted": 14465.565014613127,
-      "absolute_error": 284.43498538687345,
-      "error_percentage": 1.9283727822838876
+      "predicted": 14465.529575541008,
+      "absolute_error": 284.47042445899206,
+      "error_percentage": 1.9286130471796072
     },
     {
       "date": "2024-01-24",
       "actual": 14700.0,
-      "predicted": 14395.07521763581,
-      "absolute_error": 304.92478236419083,
-      "error_percentage": 2.074318247375448
+      "predicted": 14395.166226425603,
+      "absolute_error": 304.8337735743971,
+      "error_percentage": 2.073699139961885
     },
     {
       "date": "2024-02-01",
       "actual": 14850.0,
-      "predicted": 14526.387632711234,
-      "absolute_error": 323.6123672887661,
-      "error_percentage": 2.1792078605304117
+      "predicted": 14526.336295259429,
+      "absolute_error": 323.6637047405711,
+      "error_percentage": 2.179553567276573
     },
     {
       "date": "2024-12-11",
       "actual": 14750.0,
-      "predicted": 14413.302911897856,
-      "absolute_error": 336.69708810214433,
-      "error_percentage": 2.2826921227264023
+      "predicted": 14413.286154070229,
+      "absolute_error": 336.7138459297712,
+      "error_percentage": 2.2828057351170927
     },
     {
       "date": "2024-02-02",
       "actual": 14850.0,
-      "predicted": 14509.004038781686,
-      "absolute_error": 340.9959612183138,
-      "error_percentage": 2.2962690991132244
+      "predicted": 14508.92862296538,
+      "absolute_error": 341.0713770346192,
+      "error_percentage": 2.2967769497280752
     },
     {
       "date": "2024-11-19",
       "actual": 14750.0,
-      "predicted": 14386.062458743363,
-      "absolute_error": 363.9375412566369,
-      "error_percentage": 2.4673731610619454
+      "predicted": 14386.0194429622,
+      "absolute_error": 363.9805570377994,
+      "error_percentage": 2.467664793476606
     },
     {
       "date": "2024-12-20",
       "actual": 14800.0,
-      "predicted": 14424.558747667403,
-      "absolute_error": 375.4412523325973,
-      "error_percentage": 2.5367652184634952
+      "predicted": 14424.695814078239,
+      "absolute_error": 375.304185921761,
+      "error_percentage": 2.5358390940659525
     },
     {
       "date": "2024-11-25",
       "actual": 14600.0,
-      "predicted": 14222.646963288784,
-      "absolute_error": 377.3530367112162,
-      "error_percentage": 2.584609840487782
+      "predicted": 14222.499043299502,
+      "absolute_error": 377.50095670049814,
+      "error_percentage": 2.585622991099302
     }
   ],
   "worst_predictions": [
     {
       "date": "2024-07-26",
       "actual": 15000.0,
-      "predicted": 13185.742017286713,
-      "absolute_error": 1814.2579827132868,
-      "error_percentage": 12.095053218088578
+      "predicted": 13185.877939291922,
+      "absolute_error": 1814.1220607080777,
+      "error_percentage": 12.094147071387184
     },
     {
       "date": "2024-07-25",
       "actual": 15000.0,
-      "predicted": 13231.687272702306,
-      "absolute_error": 1768.3127272976944,
-      "error_percentage": 11.788751515317964
+      "predicted": 13231.867911767591,
+      "absolute_error": 1768.132088232409,
+      "error_percentage": 11.787547254882726
     },
     {
       "date": "2024-07-24",
       "actual": 15000.0,
-      "predicted": 13336.343892137798,
-      "absolute_error": 1663.6561078622017,
-      "error_percentage": 11.091040719081345
+      "predicted": 13336.593652477131,
+      "absolute_error": 1663.4063475228686,
+      "error_percentage": 11.089375650152457
     },
     {
       "date": "2024-07-23",
       "actual": 15000.0,
-      "predicted": 13363.84606065136,
-      "absolute_error": 1636.15393934864,
-      "error_percentage": 10.907692928990933
+      "predicted": 13364.138252906829,
+      "absolute_error": 1635.8617470931713,
+      "error_percentage": 10.905744980621142
     },
     {
       "date": "2024-07-29",
       "actual": 14950.0,
-      "predicted": 13334.844001948686,
-      "absolute_error": 1615.1559980513139,
-      "error_percentage": 10.80371905051046
+      "predicted": 13335.072705695953,
+      "absolute_error": 1614.9272943040469,
+      "error_percentage": 10.802189259558842
     },
     {
       "date": "2024-07-30",
       "actual": 14950.0,
-      "predicted": 13349.905457062085,
-      "absolute_error": 1600.0945429379153,
-      "error_percentage": 10.702973531357292
+      "predicted": 13350.127474641524,
+      "absolute_error": 1599.8725253584762,
+      "error_percentage": 10.701488463936295
     },
     {
       "date": "2024-07-22",
       "actual": 15000.0,
-      "predicted": 13412.704583991237,
-      "absolute_error": 1587.295416008763,
-      "error_percentage": 10.581969440058419
+      "predicted": 13413.046033514296,
+      "absolute_error": 1586.9539664857039,
+      "error_percentage": 10.579693109904692
     },
     {
       "date": "2024-08-01",
       "actual": 14950.0,
-      "predicted": 13460.995810893486,
-      "absolute_error": 1489.0041891065139,
-      "error_percentage": 9.959894241515142
+      "predicted": 13461.22816463521,
+      "absolute_error": 1488.7718353647906,
+      "error_percentage": 9.958340035884888
     },
     {
       "date": "2024-07-31",
       "actual": 14950.0,
-      "predicted": 13488.296295364966,
-      "absolute_error": 1461.7037046350342,
-      "error_percentage": 9.777282305251065
+      "predicted": 13488.501954616815,
+      "absolute_error": 1461.498045383185,
+      "error_percentage": 9.775906658081505
     },
     {
       "date": "2024-06-04",
       "actual": 15000.0,
-      "predicted": 13618.085346679845,
-      "absolute_error": 1381.9146533201547,
-      "error_percentage": 9.212764355467698
+      "predicted": 13618.347236139358,
+      "absolute_error": 1381.6527638606422,
+      "error_percentage": 9.211018425737615
     }
   ]
 }

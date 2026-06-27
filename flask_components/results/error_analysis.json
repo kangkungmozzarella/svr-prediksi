@@ -3,10 +3,10 @@
     "Beras Kualitas Bawah I": [
       {
         "Year": 2024,
-        "MAE": 866.63,
-        "Std_Error": 275.03,
-        "Min_Error": 40.36,
-        "Max_Error": 1723.49,
+        "MAE": 866.53,
+        "Std_Error": 275.04,
+        "Min_Error": 40.4,
+        "Max_Error": 1723.5,
         "MAPE": 7.01
       }
     ],
@@ -23,10 +23,10 @@
     "Beras Kualitas Medium I": [
       {
         "Year": 2024,
-        "MAE": 725.49,
-        "Std_Error": 306.18,
-        "Min_Error": 9.08,
-        "Max_Error": 1846.1,
+        "MAE": 725.54,
+        "Std_Error": 306.16,
+        "Min_Error": 9.19,
+        "Max_Error": 1846.11,
         "MAPE": 5.19
       }
     ],
@@ -44,19 +44,19 @@
       {
         "Year": 2024,
         "MAE": 860.92,
-        "Std_Error": 339.3,
-        "Min_Error": 50.55,
-        "Max_Error": 1883.76,
+        "Std_Error": 339.27,
+        "Min_Error": 50.58,
+        "Max_Error": 1883.72,
         "MAPE": 5.89
       }
     ],
     "Beras Kualitas Super II": [
       {
         "Year": 2024,
-        "MAE": 815.39,
-        "Std_Error": 295.33,
-        "Min_Error": 17.31,
-        "Max_Error": 1814.26,
+        "MAE": 815.31,
+        "Std_Error": 295.26,
+        "Min_Error": 17.13,
+        "Max_Error": 1814.12,
         "MAPE": 5.45
       }
     ]
