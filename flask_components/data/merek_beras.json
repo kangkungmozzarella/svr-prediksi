@@ -1,0 +1,11 @@
+{
+  "dasar_pengelompokan": "Pengelompokan merek beras mengacu pada klasifikasi mutu PIHPS (Kualitas Bawah I dan II, Medium I dan II, serta Super I dan II) yang dibedakan berdasarkan tingkat butir patah, derajat sosoh, dan kisaran harga. Merek yang dicantumkan merupakan merek beras yang umum beredar dan diperdagangkan di wilayah Sumatera Utara.",
+  "kategori": {
+    "Beras Kualitas Bawah I": ["IR 64 (curah)", "Kuku Balam (curah)"],
+    "Beras Kualitas Bawah II": ["Beras Curah Campur", "Beras Patah Pasar"],
+    "Beras Kualitas Medium I": ["Anak Raja", "Cap Lele"],
+    "Beras Kualitas Medium II": ["Sania", "Cap Mawar"],
+    "Beras Kualitas Super I": ["Pandan Wangi", "Setra Ramos"],
+    "Beras Kualitas Super II": ["Rojolele", "Topi Koki"]
+  }
+}

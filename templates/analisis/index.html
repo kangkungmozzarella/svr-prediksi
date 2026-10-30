@@ -590,7 +590,7 @@
                                         <div class="col-md-2">
                                             <div class="mb-2">
                                                 <strong>Gamma:</strong><br>
-                                                <span class="text-muted">{{ model_parameters.gamma }}</span>
+                                                <span class="text-muted">{{ gamma_text or model_parameters.gamma }}</span>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
@@ -613,6 +613,38 @@
                                         <div class="test-split" style="width: {{ test_percentage }}%;"></div>
                                     </div>
                                 </div>
+
+                                <div class="mt-4">
+                                    <h6 class="text-danger mb-2">Dasar Penentuan Parameter</h6>
+                                    <p class="small text-muted mb-2">
+                                        Parameter SVR ditetapkan sebelum proses pelatihan dan digunakan sama untuk seluruh kategori beras:
+                                    </p>
+                                    <ul class="small text-muted mb-0">
+                                        <li><strong>C = {{ model_parameters.C }}</strong>: parameter regularisasi yang mengatur penalti terhadap data di luar tabung &epsilon;.
+                                            Nilai C yang besar membuat model berusaha menekan kesalahan pada data latih yang telah distandardisasi.</li>
+                                        <li><strong>&epsilon; = {{ model_parameters.epsilon }}</strong>: lebar tabung toleransi. Karena target distandardisasi,
+                                            &epsilon; = 0,1 berarti toleransi sebesar 0,1 simpangan baku harga. Nilai ini adalah nilai bawaan pustaka scikit-learn.</li>
+                                        <li><strong>&gamma; = {{ gamma_text }}</strong>: koefisien kernel RBF
+                                            K(x, x') = exp(&minus;&gamma;||x &minus; x'||<sup>2</sup>).
+                                            {% if gamma_is_scale %}Opsi <em>scale</em> menghitung &gamma; = 1 / (n_fitur &times; Var(X)) secara otomatis dari data latih.{% endif %}</li>
+                                    </ul>
+                                </div>
+
+
+                                <div class="mt-4">
+                                    <h6 class="text-danger mb-2">Arti &epsilon;, &xi;<sub>i</sub>, dan &xi;<sub>i</sub>* pada Optimasi SVR</h6>
+                                    <p class="small text-muted mb-1">
+                                        Fungsi objektif SVR: minimumkan &frac12;||w||<sup>2</sup> + C &Sigma;(&xi;<sub>i</sub> + &xi;<sub>i</sub>*)
+                                        dengan syarat y<sub>i</sub> &minus; f(x<sub>i</sub>) &le; &epsilon; + &xi;<sub>i</sub>,
+                                        f(x<sub>i</sub>) &minus; y<sub>i</sub> &le; &epsilon; + &xi;<sub>i</sub>*, dan &xi;<sub>i</sub>, &xi;<sub>i</sub>* &ge; 0.
+                                    </p>
+                                    <ul class="small text-muted mb-0">
+                                        <li>&epsilon; (epsilon) adalah lebar tabung toleransi: selisih prediksi dan nilai aktual yang tidak melebihi &epsilon; tidak dihitung sebagai kesalahan.</li>
+                                        <li>&xi;<sub>i</sub> adalah variabel <em>slack</em> atas, yaitu seberapa jauh data ke-i berada di atas batas tabung (nilai aktual lebih besar dari prediksi + &epsilon;).</li>
+                                        <li>&xi;<sub>i</sub>* adalah variabel <em>slack</em> bawah, yaitu seberapa jauh data ke-i berada di bawah batas tabung (nilai aktual lebih kecil dari prediksi &minus; &epsilon;).</li>
+                                        <li>Data di dalam tabung memiliki &xi;<sub>i</sub> = &xi;<sub>i</sub>* = 0. Parameter C mengatur seberapa besar penalti terhadap total &xi;<sub>i</sub> + &xi;<sub>i</sub>*.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -634,6 +666,8 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Kategori Beras</th>
+                                                {% if merek_beras %}<th>Merek Beras</th>{% endif %}
+                                                {% if model_details %}<th>Support Vector</th>{% endif %}
                                                 <th>MAPE (%)</th>
                                                 <th>MAE (Rp)</th>
                                                 <th>RMSE (Rp)</th>
@@ -649,6 +683,12 @@
                                                     <i class="ph ph-grain me-1" style="color: #F39C12;"></i>
                                                     {{ category }}
                                                 </td>
+                                                {% if merek_beras %}
+                                                <td style="text-align: left;">{{ merek_beras.kategori.get(category, [])|join(', ') }}</td>
+                                                {% endif %}
+                                                {% if model_details %}
+                                                <td>{{ model_details.get(category, {}).get('n_support_vectors', '-') }}</td>
+                                                {% endif %}
                                                 <td>
                                                     <span class="badge bg-success">{{ "%.2f"|format(perf.mape) }}%</span>
                                                 </td>
@@ -677,7 +717,16 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                
+                                {% if model_details %}
+                                <p class="text-muted small mt-2 mb-0">
+                                    <i class="ph ph-info me-1"></i>Support vector adalah data latih yang berada pada atau di luar batas
+                                    tabung &epsilon; (&epsilon; = {{ model_parameters.epsilon }}) sehingga membentuk fungsi regresi.
+                                    Nilai gamma &gamma; = {{ gamma_text }}{% if gamma_is_scale %} dihitung otomatis dengan rumus
+                                    &gamma; = 1 / (n_fitur &times; Var(X)), di mana X adalah data latih yang sudah distandardisasi
+                                    (Var(X) = 1) dan n_fitur = {{ (model_details.values()|first).n_features }}{% else %} ditetapkan
+                                    sebelum pelatihan{% endif %}.
+                                </p>
+                                {% endif %}
                                 <div class="interpretation-box mt-4">
                                     <h6 class="text-danger mb-2">
                                         <i class="ph ph-info me-2"></i>Interpretasi Performa
@@ -725,7 +774,10 @@
                         {% set safe_category = category|replace(' ', '_')|replace('/', '_') %}
                         <div id="detail-table-{{ safe_category }}" class="detail-prediction-table" style="display: none;">
                             <h6>{{ category }}</h6>
-                            
+                            {% if merek_beras and merek_beras.kategori.get(category) %}
+                            <p class="text-muted small mb-2">Merek: {{ merek_beras.kategori[category]|join(', ') }}</p>
+                            {% endif %}
+
                             {% if detailed_predictions[category] %}
                             <div class="table-wrapper">
                                 <table class="table table-striped table-hover detail-table">
@@ -772,6 +824,14 @@
                                         {% endfor %}
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                <strong>Absolute Percentage Error (APE).</strong> APE mengukur besar kesalahan prediksi pada setiap hari
+                                dalam persen terhadap harga aktual:
+                                APE<sub>i</sub> = |y<sub>i</sub> &minus; &#375;<sub>i</sub>| / y<sub>i</sub> &times; 100%,
+                                dengan y<sub>i</sub> harga aktual dan &#375;<sub>i</sub> harga prediksi. Rata-rata APE seluruh data uji adalah MAPE.
+                                Pada tabel di atas, badge hijau menandakan APE &lt; 5%, biru 5&ndash;10%, dan kuning &ge; 10%.
+                                Semakin kecil APE, semakin dekat prediksi dengan harga aktual.
                             </div>
 
                             <div class="p-3 mt-3" style="background: rgba(142, 68, 173, 0.06); border-left: 4px solid #8E44AD; border-radius: 0 10px 10px 0;">
@@ -1000,6 +1060,17 @@
                             <i class="ph ph-info me-1"></i>Korelasi |r| &lt; 0.2 menunjukkan cuaca berpengaruh lemah dibanding pola harga historis,
                             namun tetap dipertimbangkan sebagai variabel eksogen sesuai revisi penelitian.
                         </p>
+                        <div class="px-3 pb-3 small text-muted">
+                            <p class="mb-1"><strong>Korelasi Pearson.</strong> Koefisien korelasi (r) mengukur kekuatan dan arah hubungan linier
+                            antara dua variabel:</p>
+                            <p class="mb-1 text-center">r = &Sigma;(x<sub>i</sub> &minus; x&#772;)(y<sub>i</sub> &minus; &#563;) /
+                            &radic;[&Sigma;(x<sub>i</sub> &minus; x&#772;)<sup>2</sup> &middot; &Sigma;(y<sub>i</sub> &minus; &#563;)<sup>2</sup>]</p>
+                            <p class="mb-1">x adalah faktor cuaca (temperatur atau curah hujan), y adalah harga beras, dan nilai r berada pada rentang
+                            &minus;1 sampai +1. Perhitungan dilakukan dengan Python menggunakan pustaka <em>pandas</em> melalui fungsi
+                            <code>DataFrame.corr()</code> (metode bawaan: Pearson).</p>
+                            <p class="mb-0">Cara membaca: r positif berarti harga cenderung naik saat faktor cuaca naik, r negatif berarti
+                            sebaliknya. |r| &lt; 0,2 sangat lemah, 0,2&ndash;0,4 lemah, 0,4&ndash;0,6 sedang, 0,6&ndash;0,8 kuat, dan &gt; 0,8 sangat kuat.</p>
+                        </div>
                     </div>
                 </div>
                 {% endif %}

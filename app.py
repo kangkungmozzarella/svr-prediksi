@@ -20,6 +20,16 @@ app = Flask(__name__)
 app.secret_key = "svr-rice-price-prediction-secret-key-2025"
 
 # Login required decorator
+def load_model_parameters():
+    """Parameter SVR terpakai dari results/final_performance_summary.json"""
+    path = os.path.join(os.getcwd(), 'flask_components', 'results', 'final_performance_summary.json')
+    try:
+        with open(path, encoding='utf-8') as f:
+            p = json.load(f)['model_parameters']
+        return {'C': p['C'], 'epsilon': p['epsilon'], 'gamma': p['gamma']}
+    except (FileNotFoundError, KeyError, json.JSONDecodeError):
+        return {'C': 100, 'epsilon': 0.1, 'gamma': 'scale'}
+
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
@@ -518,11 +528,7 @@ def tentang():
         'best_category_short': 'Medium II',
         'interpretation': 'Sangat Baik',
         'total_models': 6,
-        'model_parameters': {
-            'C': 100,
-            'epsilon': 0.1,
-            'gamma': 'scale'
-        },
+        'model_parameters': load_model_parameters(),
         'time_features': ['Year', 'Month', 'Day', 'DayOfWeek', 'DayOfYear', 'Quarter'],
         'weather_features': ['Temperatur', 'Curah_Hujan', 'Temperatur_rolling_7', 'Curah_Hujan_rolling_7', 'Curah_Hujan_rolling_30'],
         'lag_features': ['lag_1', 'lag_7', 'lag_30'],
@@ -753,7 +759,7 @@ def analisis():
         'best_mape': 5.07,
         'interpretation': 'Sangat Baik',
         'total_models': 6,
-        'model_parameters': {'C': 100, 'epsilon': 0.1, 'gamma': 'scale'},
+        'model_parameters': load_model_parameters(),
         'train_samples': 982,
         'test_samples': 246,
         'train_percentage': 80,
@@ -1102,7 +1108,7 @@ def prediksi():
         'categories_list': [],
         'selected_days': 30,  # Default 30 hari
         'selected_category': 'all',  # Default semua kategori
-        'available_days': 730,  # Total hari tersedia
+        'available_days': 1095,  # Total hari tersedia
         'start_date': '',
         'end_date': '',
         'last_historical_date': '',
@@ -1146,7 +1152,7 @@ def prediksi():
                 future_summary = json.load(f)
             
             prediction_info = future_summary.get('prediction_info', {})
-            available_days = prediction_info.get('total_days', 730)
+            available_days = prediction_info.get('total_days', 1095)
             last_historical_date = prediction_info.get('last_historical_date', '')
             
             print(f"✅ Loaded future_predictions_summary.json")
@@ -1157,7 +1163,7 @@ def prediksi():
             prediksi_data['last_historical_date'] = last_historical_date
         else:
             print(f"⚠️ future_predictions_summary.json not found")
-            available_days = 730
+            available_days = 1095
             last_historical_date = ''
         
         # ===== HANDLE FORM SUBMISSION =====
@@ -1410,6 +1416,43 @@ def internal_error(error):
     return render_template('layouts/500.html'), 500
 
 #-------Context Processors---------#
+def load_merek_beras():
+    """Muat daftar merek beras per kategori dari flask_components/data/merek_beras.json"""
+    path = os.path.join(os.getcwd(), 'flask_components', 'data', 'merek_beras.json')
+    try:
+        with open(path, encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return None
+
+def load_model_details():
+    """Muat gamma hasil hitung dan jumlah support vector per kategori (hasil export_model_details.py)"""
+    path = os.path.join(os.getcwd(), 'flask_components', 'data', 'model_details.json')
+    try:
+        with open(path, encoding='utf-8') as f:
+            return json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+@app.context_processor
+def inject_merek_beras():
+    details = load_model_details()
+    first = next(iter(details.values()), None)
+    gamma_param = load_model_parameters()['gamma']
+    gamma_text = None
+    if first:
+        if gamma_param == 'scale':
+            gamma_text = f"scale (= 1/{first['n_features']} = {first['gamma_value']:.4f})"
+        else:
+            gamma_text = f"{first['gamma_value']:g}"
+        gamma_text = gamma_text.replace('.', ',')
+    return {
+        'merek_beras': load_merek_beras(),
+        'model_details': details,
+        'gamma_text': gamma_text,
+        'gamma_is_scale': gamma_param == 'scale',
+    }
+
 @app.context_processor
 def inject_global_vars():
     """Inject global variables ke semua template"""

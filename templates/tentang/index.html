@@ -262,10 +262,59 @@
                             <div class="benefit-card">
                                 <i class="ph ph-grain text-warning me-2"></i>
                                 <strong>{{ loop.index }}. {{ category }}</strong>
+                                {% if merek_beras and merek_beras.kategori.get(category) %}
+                                <div class="small text-muted mt-1">
+                                    Merek: {{ merek_beras.kategori[category] | join(', ') }}
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
                         {% endfor %}
                     </div>
+                    {% if merek_beras %}
+                    <p class="text-muted small mb-0">
+                        <i class="ph ph-info me-1"></i>{{ merek_beras.dasar_pengelompokan }}
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Sumber Data -->
+        <div class="row mb-4">
+            <div class="col-lg-12">
+                <div class="info-card">
+                    <h5><i class="ph ph-database me-2"></i>Sumber Data Penelitian</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Sumber</th>
+                                    <th>Cara Perolehan</th>
+                                    <th>Tautan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Harga beras harian (6 kategori), Kabupaten Langkat, 2020&ndash;2024</td>
+                                    <td>Pusat Informasi Harga Pangan Strategis (PIHPS) Nasional, Bank Indonesia</td>
+                                    <td>Diunduh dari situs PIHPS dalam format tabel (Excel/CSV). Tidak menggunakan API.</td>
+                                    <td><a href="https://www.bi.go.id/hargapangan" target="_blank" rel="noopener">bi.go.id/hargapangan</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Temperatur dan curah hujan harian, 2020&ndash;2024</td>
+                                    <td>Open-Meteo Historical Weather API</td>
+                                    <td>Diambil melalui API (permintaan HTTP) berdasarkan koordinat wilayah Kabupaten Langkat.</td>
+                                    <td><a href="https://open-meteo.com/en/docs/historical-weather-api" target="_blank" rel="noopener">open-meteo.com</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-muted small mb-0">
+                        <i class="ph ph-info me-1"></i>Kedua data digabung berdasarkan tanggal. Hanya tanggal yang memiliki data harga
+                        yang digunakan, sehingga data cuaca 1.827 hari menghasilkan {{ original_records }} hari data gabungan.
+                    </p>
                 </div>
             </div>
         </div>
@@ -356,7 +405,7 @@
                         </div>
                         <div class="col-md-4 mb-3">
                             <div class="stat-item">
-                                <div class="stat-value">{{ model_parameters.gamma }}</div>
+                                <div class="stat-value">{{ gamma_text or model_parameters.gamma }}</div>
                                 <div class="stat-label">Gamma</div>
                             </div>
                         </div>
@@ -435,6 +484,17 @@
                         <i class="ph ph-info me-1"></i>Korelasi relatif lemah (|r| &lt; 0.2) menunjukkan cuaca bukan faktor dominan
                         dibanding pola harga historis (lag/rolling), namun tetap relevan dimasukkan sebagai variabel eksogen.
                     </p>
+                    <div class="small text-muted mt-3">
+                        <p class="mb-1"><strong>Korelasi Pearson.</strong> Koefisien korelasi (r) mengukur kekuatan dan arah hubungan linier
+                        antara dua variabel:</p>
+                        <p class="mb-1 text-center">r = &Sigma;(x<sub>i</sub> &minus; x&#772;)(y<sub>i</sub> &minus; &#563;) /
+                        &radic;[&Sigma;(x<sub>i</sub> &minus; x&#772;)<sup>2</sup> &middot; &Sigma;(y<sub>i</sub> &minus; &#563;)<sup>2</sup>]</p>
+                        <p class="mb-1">x adalah faktor cuaca (temperatur atau curah hujan), y adalah harga beras, dan r berada pada rentang
+                        &minus;1 sampai +1. Perhitungan dilakukan dengan Python menggunakan pustaka <em>pandas</em> melalui fungsi
+                        <code>DataFrame.corr()</code> (metode bawaan: Pearson).</p>
+                        <p class="mb-0">Cara membaca: r positif berarti harga cenderung naik saat faktor cuaca naik, r negatif berarti
+                        sebaliknya. |r| &lt; 0,2 sangat lemah, 0,2&ndash;0,4 lemah, 0,4&ndash;0,6 sedang, 0,6&ndash;0,8 kuat, dan &gt; 0,8 sangat kuat.</p>
+                    </div>
                     {% endif %}
                 </div>
             </div>

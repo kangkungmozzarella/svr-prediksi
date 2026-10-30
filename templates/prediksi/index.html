@@ -423,6 +423,7 @@
                         <button type="button" class="preset-btn" data-days="180">6 Bulan</button>
                         <button type="button" class="preset-btn" data-days="365">1 Tahun</button>
                         <button type="button" class="preset-btn" data-days="730">2 Tahun</button>
+                        <button type="button" class="preset-btn" data-days="1095">3 Tahun</button>
                     </div>
 
                     <!-- Custom Input -->
@@ -548,6 +549,9 @@
                         <i class="ph ph-table"></i>
                         Detail Prediksi: {{ category }}
                     </h6>
+                    {% if merek_beras and merek_beras.kategori.get(category) %}
+                    <small class="text-white-50">Merek: {{ merek_beras.kategori[category]|join(', ') }}</small>
+                    {% endif %}
                     <span class="badge bg-light text-dark">{{ predictions|length }} hari</span>
                 </div>
 
@@ -629,11 +633,11 @@
             <div class="chart-container">
                 <h5 class="mb-4" style="color: #8E44AD; border-bottom: 2px solid #8E44AD; padding-bottom: 0.5rem;">
                     <i class="ph ph-chart-line me-2"></i>
-                    Visualisasi Referensi (2 Tahun Penuh)
+                    Visualisasi Referensi (Seluruh Periode Prediksi)
                 </h5>
                 <p class="text-muted mb-3">
                     <i class="ph ph-info me-2"></i>
-                    Grafik di bawah menampilkan prediksi lengkap 2 tahun untuk referensi analisis trend jangka panjang.
+                    Grafik di bawah menampilkan prediksi lengkap seluruh periode (hingga akhir 2027) untuk referensi analisis trend jangka panjang.
                 </p>
 
                 {% if visualizations.future_all %}
@@ -662,7 +666,7 @@
                 Data Prediksi Belum Tersedia
             </h5>
             <p class="mb-0">
-                Silakan jalankan Cell 16 di Jupyter Notebook terlebih dahulu untuk menggenerate data prediksi 2 tahun ke depan.
+                Silakan jalankan Cell 16 di Jupyter Notebook terlebih dahulu untuk menggenerate data prediksi masa depan.
             </p>
         </div>
         {% endif %}
