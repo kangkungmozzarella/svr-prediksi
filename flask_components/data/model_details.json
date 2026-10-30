@@ -1,0 +1,32 @@
+{
+  "Beras Kualitas Bawah I": {
+    "gamma_value": 0.0625,
+    "n_features": 16,
+    "n_support_vectors": 199
+  },
+  "Beras Kualitas Bawah II": {
+    "gamma_value": 0.0625,
+    "n_features": 16,
+    "n_support_vectors": 182
+  },
+  "Beras Kualitas Medium I": {
+    "gamma_value": 0.0625,
+    "n_features": 16,
+    "n_support_vectors": 262
+  },
+  "Beras Kualitas Medium II": {
+    "gamma_value": 0.0625,
+    "n_features": 16,
+    "n_support_vectors": 195
+  },
+  "Beras Kualitas Super I": {
+    "gamma_value": 0.0625,
+    "n_features": 16,
+    "n_support_vectors": 236
+  },
+  "Beras Kualitas Super II": {
+    "gamma_value": 0.0625,
+    "n_features": 16,
+    "n_support_vectors": 218
+  }
+}
