@@ -1,7 +1,7 @@
 Kategori,MAE (Rp),RMSE (Rp),MAPE (%)
-Bawah I,40,47,0.40%
-Bawah II,48,56,0.45%
-Medium I,50,57,0.43%
-Medium II,46,55,0.39%
-Super I,40,47,0.32%
-Super II,47,55,0.37%
+Bawah I,8,27,0.08%
+Bawah II,8,27,0.07%
+Medium I,14,74,0.12%
+Medium II,8,28,0.06%
+Super I,8,32,0.06%
+Super II,10,34,0.08%

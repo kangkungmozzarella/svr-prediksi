@@ -5,7 +5,7 @@
     "location": "Kabupaten Langkat",
     "method": "Support Vector Regression (SVR) dengan kernel RBF",
     "period": "2020-01-02 s/d 2024-12-31",
-    "completion_date": "2026-10-30T23:58:36.492531"
+    "completion_date": "2026-10-31T16:05:47.989272"
   },
   "dataset_summary": {
     "total_records_original": 1258,
@@ -76,62 +76,62 @@
   },
   "results": {
     "average_performance": {
-      "mae": 779.2076188378923,
-      "rmse": 833.9531540023444,
-      "mape": 5.66020079569747
+      "mae": 68.09635335702305,
+      "rmse": 100.7971017978507,
+      "mape": 0.4947987640931692
     },
     "best_category": {
-      "name": "Beras Kualitas Medium II",
-      "mape": 5.070144755387547,
-      "mae": 715.9239821907588,
-      "rmse": 763.4858700148943
+      "name": "Beras Kualitas Super I",
+      "mape": 0.31378110655117364,
+      "mae": 45.603793761198375,
+      "rmse": 71.06985207063263
     },
     "worst_category": {
-      "name": "Beras Kualitas Bawah I",
-      "mape": 7.006804707953231,
-      "mae": 866.6349217011501,
-      "rmse": 909.0611529882988
+      "name": "Beras Kualitas Super II",
+      "mape": 0.6077358229963477,
+      "mae": 90.64208560240576,
+      "rmse": 131.09184250557954
     },
     "all_categories_performance": {
       "Beras Kualitas Bawah I": {
-        "mae": 866.6349217011501,
-        "rmse": 909.0611529882988,
-        "mape": 7.006804707953231
+        "mae": 73.24209612366326,
+        "rmse": 111.79355421182082,
+        "mape": 0.5911379692322976
       },
       "Beras Kualitas Bawah II": {
-        "mae": 690.896224640091,
-        "rmse": 751.8322888471098,
-        "mape": 5.355434754902955
+        "mae": 64.25120626047398,
+        "rmse": 118.1576023447298,
+        "mape": 0.49587723420100227
       },
       "Beras Kualitas Medium I": {
-        "mae": 725.4857451384864,
-        "rmse": 787.207840910236,
-        "mape": 5.187663597043154
+        "mae": 57.14481603471226,
+        "rmse": 78.22416975143919,
+        "mape": 0.41016824067744695
       },
       "Beras Kualitas Medium II": {
-        "mae": 715.9239821907588,
-        "rmse": 763.4858700148943,
-        "mape": 5.070144755387547
+        "mae": 77.6941223596847,
+        "rmse": 94.44558990290224,
+        "mape": 0.5500922109007468
       },
       "Beras Kualitas Super I": {
-        "mae": 860.9190687344986,
-        "rmse": 925.1139153607411,
-        "mape": 5.890265250240068
+        "mae": 45.603793761198375,
+        "rmse": 71.06985207063263,
+        "mape": 0.31378110655117364
       },
       "Beras Kualitas Super II": {
-        "mae": 815.3857706223682,
-        "rmse": 867.0178558927867,
-        "mape": 5.450891708657863
+        "mae": 90.64208560240576,
+        "rmse": 131.09184250557954,
+        "mape": 0.6077358229963477
       }
     }
   },
   "conclusions": {
-    "model_accuracy": "Model dapat memprediksi harga beras dengan error rata-rata 5.66%",
+    "model_accuracy": "Model dapat memprediksi harga beras dengan error rata-rata 0.49%",
     "interpretasi": "Sangat Baik (≤10%)",
     "practical_application": "Model SVR siap digunakan untuk prediksi harga bahan pangan di Kabupaten Langkat",
     "recommendations": [
       "Model menunjukkan performa sangat baik (≤10%) untuk prediksi harga beras",
-      "Kategori terbaik: Beras Kualitas Medium II dengan MAPE 5.07%",
+      "Kategori terbaik: Beras Kualitas Super I dengan MAPE 0.31%",
       "Sistem dapat diintegrasikan dengan web application untuk prediksi real-time",
       "Perlu update data berkala untuk maintenance akurasi model",
       "SVR dengan kernel RBF efektif untuk data time series harga bahan pangan"

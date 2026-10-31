@@ -4,7 +4,7 @@
 
 **Peneliti:** Haris  
 **Periode Data:** 2020-01-02 s/d 2024-12-31  
-**Completed:** 2026-10-30
+**Completed:** 2026-10-31
 
 ### ABSTRACT
 
@@ -22,19 +22,19 @@ Penelitian ini mengembangkan model prediksi harga bahan pangan (beras) di Kabupa
 ### HASIL UTAMA
 
 **Performa Rata-rata:**
-- **MAE:** Rp 779
-- **RMSE:** Rp 834
-- **MAPE:** 5.66%
+- **MAE:** Rp 68
+- **RMSE:** Rp 101
+- **MAPE:** 0.49%
 
-**Kategori Terbaik:** Beras Kualitas Medium II
-- MAPE: 5.07%
+**Kategori Terbaik:** Beras Kualitas Super I
+- MAPE: 0.31%
 
-**Kategori Terburuk:** Beras Kualitas Bawah I
-- MAPE: 7.01%
+**Kategori Terburuk:** Beras Kualitas Super II
+- MAPE: 0.61%
 
 ### KESIMPULAN
 
-Model SVR menunjukkan performa sangat baik (≤10%) untuk prediksi harga beras dengan tingkat error rata-rata 5.66%. Sistem telah diimplementasikan dalam bentuk web application dengan Flask untuk prediksi real-time.
+Model SVR menunjukkan performa sangat baik (≤10%) untuk prediksi harga beras dengan tingkat error rata-rata 0.49%. Sistem telah diimplementasikan dalam bentuk web application dengan Flask untuk prediksi real-time.
 
 ### IMPLEMENTASI
 

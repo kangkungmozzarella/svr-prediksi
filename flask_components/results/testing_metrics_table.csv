@@ -1,7 +1,7 @@
 Kategori,MAE (Rp),RMSE (Rp),MAPE (%),Interpretasi
-Bawah I,867,909,7.01%,Sangat Baik
-Bawah II,691,752,5.36%,Sangat Baik
-Medium I,725,787,5.19%,Sangat Baik
-Medium II,716,763,5.07%,Sangat Baik
-Super I,861,925,5.89%,Sangat Baik
-Super II,815,867,5.45%,Sangat Baik
+Bawah I,73,112,0.59%,Sangat Baik
+Bawah II,64,118,0.50%,Sangat Baik
+Medium I,57,78,0.41%,Sangat Baik
+Medium II,78,94,0.55%,Sangat Baik
+Super I,46,71,0.31%,Sangat Baik
+Super II,91,131,0.61%,Sangat Baik

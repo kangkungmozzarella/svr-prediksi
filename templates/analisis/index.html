@@ -727,6 +727,43 @@
                                     sebelum pelatihan{% endif %}.
                                 </p>
                                 {% endif %}
+                                {% if baseline_comparison %}
+                                <h6 class="mt-4 mb-2"><i class="ph ph-scales me-2"></i>Pembanding Baseline Naif</h6>
+                                <p class="text-muted small mb-2">
+                                    Baseline naif memprediksi harga hari ini sama dengan harga kemarin (lag-1). Tabel ini
+                                    menunjukkan seberapa besar manfaat SVR dibanding tebakan sederhana tersebut pada data testing.
+                                </p>
+                                <div class="table-responsive">
+                                    <table class="table table-sm table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Kategori</th>
+                                                <th>MAPE SVR (%)</th>
+                                                <th>MAPE Naif (%)</th>
+                                                <th>MAE SVR (Rp)</th>
+                                                <th>MAE Naif (Rp)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for b in baseline_comparison %}
+                                            <tr>
+                                                <td style="text-align: left;">{{ b['Kategori'] }}</td>
+                                                <td>{{ "%.2f"|format(b['MAPE SVR (%)']) }}</td>
+                                                <td>{{ "%.2f"|format(b['MAPE Naive (%)']) }}</td>
+                                                <td>{{ "{:,.0f}".format(b['MAE SVR (Rp)']) }}</td>
+                                                <td>{{ "{:,.0f}".format(b['MAE Naive (Rp)']) }}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="text-muted small mt-2 mb-0">
+                                    <i class="ph ph-info me-1"></i>Model dilatih memprediksi <strong>selisih</strong> harga terhadap lag-1
+                                    (bukan harga mutlak), karena SVR RBF tidak dapat mengekstrapolasi di luar rentang harga data latih.
+                                    Pada data yang stabil seperti harga beras, prediksi naif untuk 1 hari ke depan sangat sulit dikalahkan;
+                                    nilai tambah SVR terletak pada pemodelan pola waktu, cuaca, dan peramalan jangka lebih panjang.
+                                </p>
+                                {% endif %}
                                 <div class="interpretation-box mt-4">
                                     <h6 class="text-danger mb-2">
                                         <i class="ph ph-info me-2"></i>Interpretasi Performa

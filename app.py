@@ -63,10 +63,10 @@ def generate_sample_stats():
             'avg': 12275
         },
         'model_performance': {
-            'avg_mape': 5.66,
-            'avg_mae': 779,
-            'avg_rmse': 834,
-            'best_category': 'Beras Kualitas Medium I',
+            'avg_mape': 0.49,
+            'avg_mae': 68,
+            'avg_rmse': 101,
+            'best_category': 'Beras Kualitas Super I',
             'worst_category': 'Beras Kualitas Super II'
         },
         'features': {
@@ -88,9 +88,9 @@ def homepage():
         'categories_count': 6,
         'categories_list': [],
         'data_period': '2020-2024',
-        'avg_mape': 5.66,
-        'avg_mae': 779,
-        'avg_rmse': 834,
+        'avg_mape': 0.49,
+        'avg_mae': 68,
+        'avg_rmse': 101,
         'interpretation': 'Sangat Baik',
         'algorithm': 'SVR',
         'kernel': 'RBF',
@@ -522,10 +522,10 @@ def tentang():
         'split_method': 'Chronological Split (80:20)',
         'train_percentage': 80,
         'test_percentage': 20,
-        'avg_mape': 5.66,
-        'avg_mae': 779,
-        'avg_rmse': 834,
-        'best_category_short': 'Medium II',
+        'avg_mape': 0.49,
+        'avg_mae': 68,
+        'avg_rmse': 101,
+        'best_category_short': 'Super I',
         'interpretation': 'Sangat Baik',
         'total_models': 6,
         'model_parameters': load_model_parameters(),
@@ -751,12 +751,12 @@ def analisis():
         'categories_count': 6,
         'categories_list': [],
         'data_period': '2020-2024',
-        'avg_mape': 5.66,
-        'avg_mae': 779,
-        'avg_rmse': 834,
-        'best_category': 'Beras Kualitas Medium II',
-        'best_category_short': 'Medium II',
-        'best_mape': 5.07,
+        'avg_mape': 0.49,
+        'avg_mae': 68,
+        'avg_rmse': 101,
+        'best_category': 'Beras Kualitas Super I',
+        'best_category_short': 'Super I',
+        'best_mape': 0.31,
         'interpretation': 'Sangat Baik',
         'total_models': 6,
         'model_parameters': load_model_parameters(),
@@ -772,7 +772,8 @@ def analisis():
         'category_performance': {},
         'visualizations': {},
         'detailed_predictions': {},
-        'prediction_stats': {}
+        'prediction_stats': {},
+        'baseline_comparison': []
     }
     
     try:
@@ -808,9 +809,9 @@ def analisis():
         all_mae = [svr_results[k]['testing_metrics']['mae'] for k in kategori_beras if k in svr_results]
         all_rmse = [svr_results[k]['testing_metrics']['rmse'] for k in kategori_beras if k in svr_results]
         
-        avg_mape = sum(all_mape) / len(all_mape) if all_mape else 5.66
-        avg_mae = sum(all_mae) / len(all_mae) if all_mae else 509
-        avg_rmse = sum(all_rmse) / len(all_rmse) if all_rmse else 537
+        avg_mape = sum(all_mape) / len(all_mape) if all_mape else 0.49
+        avg_mae = sum(all_mae) / len(all_mae) if all_mae else 68
+        avg_rmse = sum(all_rmse) / len(all_rmse) if all_rmse else 101
         
         print(f"📈 Avg MAPE: {avg_mape:.2f}%")
         print(f"📈 Avg MAE: Rp {avg_mae:.0f}")
@@ -823,9 +824,9 @@ def analisis():
             best_mape = svr_results[best_category]['testing_metrics']['mape']
             print(f"🏆 Best: {best_category_short} (MAPE: {best_mape:.2f}%)")
         else:
-            best_category = 'Beras Kualitas Medium II'
-            best_category_short = 'Medium II'
-            best_mape = 5.07
+            best_category = 'Beras Kualitas Super I'
+            best_category_short = 'Super I'
+            best_mape = 0.31
         
         # Category performance
         category_performance = {}
@@ -1051,7 +1052,14 @@ def analisis():
             print(f"⚠️ Visualizations folder not found: {viz_source_path}")
         
         # Update data
+        # ===== BASELINE NAIF (harga hari ini = harga kemarin) =====
+        baseline_comparison = []
+        baseline_path = os.path.join(results_path, 'baseline_comparison.csv')
+        if os.path.exists(baseline_path):
+            baseline_comparison = pd.read_csv(baseline_path).to_dict('records')
+
         analisis_data.update({
+            'baseline_comparison': baseline_comparison,
             'total_records': total_records,
             'categories_count': len(kategori_beras),
             'categories_list': kategori_beras,
@@ -1480,7 +1488,7 @@ if __name__ == '__main__':
     print("Categories: 6 kategori beras")
     print("-" * 80)
     print("Metrics:   MAE, RMSE, MAPE")
-    print("Avg MAPE:  5.66% (Sangat Baik)")
+    print("Avg MAPE:  0.49% (Sangat Baik)")
     print("=" * 80)
     
     # Check flask_components folder

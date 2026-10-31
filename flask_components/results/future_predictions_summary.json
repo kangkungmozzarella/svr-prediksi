@@ -9,45 +9,45 @@
   },
   "predictions_by_category": {
     "Beras Kualitas Bawah I": {
-      "min_price": 10660.940896955588,
-      "max_price": 11706.311231507381,
-      "mean_price": 11075.459097348334,
-      "std_price": 236.51008216850707,
+      "min_price": 11479.889632346843,
+      "max_price": 12340.694273557454,
+      "mean_price": 11622.177780506196,
+      "std_price": 85.85366068095693,
       "total_predictions": 1095
     },
     "Beras Kualitas Bawah II": {
-      "min_price": 11026.892480650591,
-      "max_price": 12553.4455163753,
-      "mean_price": 11529.579029757306,
-      "std_price": 328.0356185853921,
+      "min_price": 12185.791038420017,
+      "max_price": 12861.691786067466,
+      "mean_price": 12230.408203663874,
+      "std_price": 78.50509586624587,
       "total_predictions": 1095
     },
     "Beras Kualitas Medium I": {
-      "min_price": 11624.139234581651,
-      "max_price": 13627.843137606656,
-      "mean_price": 12195.871318510204,
-      "std_price": 364.04654923659535,
+      "min_price": 13510.301178117084,
+      "max_price": 14114.225077752071,
+      "mean_price": 13746.030364130198,
+      "std_price": 64.44192484604714,
       "total_predictions": 1095
     },
     "Beras Kualitas Medium II": {
-      "min_price": 12229.12298411066,
-      "max_price": 13774.027253391881,
-      "mean_price": 12719.904378762487,
-      "std_price": 317.4685858352914,
+      "min_price": 13600.059902919265,
+      "max_price": 14367.434650741136,
+      "mean_price": 13658.778285480168,
+      "std_price": 157.7400459967683,
       "total_predictions": 1095
     },
     "Beras Kualitas Super I": {
-      "min_price": 12639.381529840732,
-      "max_price": 14151.380893525315,
-      "mean_price": 13004.698552832133,
-      "std_price": 266.20904580073426,
+      "min_price": 14068.306052987673,
+      "max_price": 14694.134583431149,
+      "mean_price": 14116.061600596655,
+      "std_price": 97.3671359842298,
       "total_predictions": 1095
     },
     "Beras Kualitas Super II": {
-      "min_price": 12913.19543431142,
-      "max_price": 14459.001064582659,
-      "mean_price": 13298.051408504862,
-      "std_price": 303.24167761649704,
+      "min_price": 14317.646275563297,
+      "max_price": 14897.765862676835,
+      "mean_price": 14359.001554613598,
+      "std_price": 87.72428847212045,
       "total_predictions": 1095
     }
   }
