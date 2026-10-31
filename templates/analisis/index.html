@@ -684,7 +684,7 @@
                                                     {{ category }}
                                                 </td>
                                                 {% if merek_beras %}
-                                                <td style="text-align: left;">{{ merek_beras.kategori.get(category, [])|join(', ') }}</td>
+                                                <td style="text-align: left; white-space: normal; min-width: 220px; max-width: 320px; font-size: 0.85rem; line-height: 1.35;">{{ merek_beras.kategori.get(category, [])|join(', ') }}</td>
                                                 {% endif %}
                                                 {% if model_details %}
                                                 <td>{{ model_details.get(category, {}).get('n_support_vectors', '-') }}</td>
