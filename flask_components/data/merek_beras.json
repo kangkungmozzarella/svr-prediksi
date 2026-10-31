@@ -1,11 +1,71 @@
 {
-  "dasar_pengelompokan": "Pengelompokan merek beras mengacu pada klasifikasi mutu PIHPS (Kualitas Bawah I dan II, Medium I dan II, serta Super I dan II) yang dibedakan berdasarkan tingkat butir patah, derajat sosoh, dan kisaran harga. Merek yang dicantumkan merupakan merek beras yang umum beredar dan diperdagangkan di wilayah Sumatera Utara.",
+  "dasar_pengelompokan": "Kategori kualitas beras pada PIHPS (Kualitas Bawah I dan II, Medium I dan II, serta Super I dan II) dibedakan berdasarkan tingkat butir patah, derajat sosoh, dan kisaran harga. Daftar merek disusun penulis berdasarkan catatan merek beras yang beredar di Kabupaten Langkat, kemudian dikelompokkan menurut kelompok mutu pada klasifikasi PIHPS, yaitu Kualitas Bawah, Medium, dan Super. Setiap kelompok mutu mencakup kategori I dan II pada PIHPS karena catatan merek tidak membedakan keduanya. Merek yang dicantumkan merupakan contoh dan bukan daftar lengkap seluruh merek beras di Kabupaten Langkat.",
   "kategori": {
-    "Beras Kualitas Bawah I": ["IR 64 (curah)", "Kuku Balam (curah)"],
-    "Beras Kualitas Bawah II": ["Beras Curah Campur", "Beras Patah Pasar"],
-    "Beras Kualitas Medium I": ["Anak Raja", "Cap Lele"],
-    "Beras Kualitas Medium II": ["Sania", "Cap Mawar"],
-    "Beras Kualitas Super I": ["Pandan Wangi", "Setra Ramos"],
-    "Beras Kualitas Super II": ["Rojolele", "Topi Koki"]
+    "Beras Kualitas Bawah I": [
+      "Sejahtera",
+      "Cap Udang",
+      "Beras karung putih polos",
+      "Beras curah tanpa merek"
+    ],
+    "Beras Kualitas Bawah II": [
+      "Sejahtera",
+      "Cap Udang",
+      "Beras karung putih polos",
+      "Beras curah tanpa merek"
+    ],
+    "Beras Kualitas Medium I": [
+      "Topas",
+      "Setra Ramos (Cap Bunga)",
+      "Program SPHP",
+      "Sinchan",
+      "Cap Mawar",
+      "Cap Merak",
+      "Cap Semut",
+      "Cap Angsa Terbang",
+      "Cap Melon BSJ"
+    ],
+    "Beras Kualitas Medium II": [
+      "Topas",
+      "Setra Ramos (Cap Bunga)",
+      "Program SPHP",
+      "Sinchan",
+      "Cap Mawar",
+      "Cap Merak",
+      "Cap Semut",
+      "Cap Angsa Terbang",
+      "Cap Melon BSJ"
+    ],
+    "Beras Kualitas Super I": [
+      "Sonia",
+      "Sovia",
+      "Raja Kembar",
+      "Anak Raja",
+      "Selancar",
+      "Cap Raja Platinum",
+      "Cap Kuku Balam",
+      "Cap Putri Langkat",
+      "Cap Kapal",
+      "Cap Regar",
+      "Cap Dua Naga",
+      "Cap Kelinci",
+      "Cap Rajunganikan",
+      "Cap Panda"
+    ],
+    "Beras Kualitas Super II": [
+      "Sonia",
+      "Sovia",
+      "Raja Kembar",
+      "Anak Raja",
+      "Selancar",
+      "Cap Raja Platinum",
+      "Cap Kuku Balam",
+      "Cap Putri Langkat",
+      "Cap Kapal",
+      "Cap Regar",
+      "Cap Dua Naga",
+      "Cap Kelinci",
+      "Cap Rajunganikan",
+      "Cap Panda"
+    ]
   }
 }
